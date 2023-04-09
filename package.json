@@ -38,8 +38,14 @@
   "devDependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@hookform/resolvers": "^3.0.1",
+    "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.11.16",
+    "formik": "^2.2.9",
+    "react-hook-form": "^7.43.9",
     "react-router-dom": "^6.10.0",
-    "sass": "^1.61.0"
+    "sass": "^1.61.0",
+    "styled-components": "^5.3.9",
+    "yup": "^1.0.2"
   }
 }
