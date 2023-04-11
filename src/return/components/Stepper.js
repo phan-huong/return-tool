@@ -332,23 +332,23 @@ const StepperForm = () => {
                     <Box sx={{ mt: 2, mb: 1, pl: 2, pr: 2 }}>
                         {getStepContent(activeStep)}
                     </Box>
-                    <Box sx={{ display:'flex', flexDirection:'row', pt:2, position:'fixed', bottom:'4rem', width:'90%' }}>
+                    <Box sx={{ display:'flex', flexDirection:'row', pt:2, position:'fixed', bottom:'4rem', width:'90%', backgroundColor:'white' }}>
                         <Button
                             color="inherit"
                             disabled={activeStep === 0}
                             onClick={handleBack}
-                            sx={{ mr: 1 }}
+                            sx={{ mr: 1 , backgroundColor:'white'}}
                         >
                             Back
                         </Button>
                         <Box sx={{ flex: '1 1 auto' }} />
                         {isStepOptional(activeStep) && (
-                            <Button color="inherit" onClick={handleSkip} sx={{ mr: 1 }}>
+                            <Button color="inherit" onClick={handleSkip} sx={{ mr: 1, backgroundColor:'white'}}>
                                 Skip
                             </Button>
                         )}
-                        <Button onClick={handleSubmit}>
-                            {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                        <Button onClick={handleSubmit} sx={{ backgroundColor:'white'}}>
+                            {activeStep === steps.length - 1 ? 'Send' : 'Next'}
                         </Button>
                     </Box>
                 </React.Fragment>

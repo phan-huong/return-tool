@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { Typography } from '@mui/material';
 
 const FormSummary = (props) => {
     const [selectedData, setSelectedData] = useState(JSON.parse(props.selectedData))
@@ -11,11 +11,12 @@ const FormSummary = (props) => {
     }, [props.selectedItems, props.selectedData])
 
     return <>
-        { selectedData.Logistician ? <h4>Logistician: {selectedData.Logistician}</h4> : <></> }
-        { selectedData.Warehouse ? <h4>Warehouse: {selectedData.Warehouse}</h4> : <></> }
-        { selectedData.idType ? <h4>idType: {selectedData.idType}</h4> : <></> }
-        { selectedData.deliveryId ? <h4>deliveryId: {selectedData.deliveryId}</h4> : <></> }
-        { selectedData.deliveryOrderId ? <h4>deliveryOrderId: {selectedData.deliveryOrderId}</h4> : <></> }
+        <Typography sx={{ mb: 2, fontWeight:'bold'}}>Summary:</Typography>
+        { selectedData.Logistician ? <p>Logistician: {selectedData.Logistician}</p> : <></> }
+        { selectedData.Warehouse ? <p>Warehouse: {selectedData.Warehouse}</p> : <></> }
+        { selectedData.idType ? <p>idType: {selectedData.idType}</p> : <></> }
+        { selectedData.deliveryId ? <p>deliveryId: {selectedData.deliveryId}</p> : <></> }
+        { selectedData.deliveryOrderId ? <p>deliveryOrderId: {selectedData.deliveryOrderId}</p> : <></> }
         {
             selectedItems.map((item, index) => {
                 if (item.checkbox)

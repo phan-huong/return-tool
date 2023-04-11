@@ -18,7 +18,6 @@ const FormLocation = (props) => {
                     value={props.formik.values.logistician}
                     onChange={props.formik.handleChange}
                     error={props.formik.touched.logistician && Boolean(props.formik.errors.logistician)}
-                    // helperText={props.formik.touched.logistician && props.formik.errors.logistician}
                 >
                     <FormControlLabel value="Finecom" control={<Radio />} label="Finecom" />
                     <FormControlLabel value="Best Solutions" control={<Radio />} label="Best Solutions" />
@@ -34,8 +33,7 @@ const FormLocation = (props) => {
                     name="warehouse"
                     value={props.formik.values.warehouse}
                     onChange={props.formik.handleChange}
-                    error={props.formik.touched.warehouse && Boolean(props.formik.errors.warehouse)}
-                    // helperText={props.formik.touched.warehouse && props.formik.errors.warehouse}  
+                    error={props.formik.touched.warehouse && Boolean(props.formik.errors.warehouse)} 
                 >
                     <FormControlLabel value="Hamburg" control={<Radio />} label="Hamburg" />
                     <FormControlLabel value="Berlin" control={<Radio />} label="Berlin" />

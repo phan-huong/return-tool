@@ -34,13 +34,14 @@ const FormAnnotation = (props) => {
                     if (item.checkbox === true)
                         return (
                             <React.Fragment key={index}>
-                                <FormControl>
-                                    <FormLabel>{item.name}</FormLabel>
+                                <FormControl sx={{mb:2}}>
+                                    <FormLabel sx={{mb:1, fontWeight:'bold'}}>{item.name}</FormLabel>
                                     <TextField
                                         multiline
                                         rows={4}
                                         value={item.annotations}
                                         onChange={(e) => handleChange(e, item.sku)}
+                                        sx={{width:'100%'}}
                                     />
                                 </FormControl>
                             </React.Fragment>

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import TextField from '@mui/material/TextField';
 import { ITEMS } from '../../schema/dummy';
+import { Box, Typography } from '@mui/material';
+import Grid from '@mui/material/Grid';
 
 const FormItems = (props) => {
     // const [selectedId, setSelectedId] = useState(props.id);
@@ -90,33 +91,35 @@ const FormItems = (props) => {
             {
                 itemValues.length > 0 ?
                     <>
+                        <Typography sx={{ mt: 2, fontWeight:'bold' }}>Purchased Items:</Typography>
+                        <Typography sx={{ mt: 1, fontSize:'0.9rem' }}>Please choose items and number of items to return</Typography>
                         {
                             itemValues.map((result, index) => {
                                 return (
-                                    <React.Fragment key={index}>
-                                        <FormControlLabel
-                                            label={result.name}
-                                            control={
-                                                <Checkbox
-                                                    checked={result.checkbox}
-                                                    onChange={() => handleChangeCheckbox(result.sku)}
-                                                />
-                                            }
-                                        />
-
-                                        <TextField
-                                            type="number"
-                                            value={result.returnQuantity}
-                                            onChange={(e) => { handleChangeQuantity(result.sku, e.target.value, result.quantity); }}
-                                            variant="outlined"
-                                        />
+                                    <React.Fragment key={index} >
+                                        <Box sx={{ display:'grid', gridTemplateColumns:'3fr 1fr', mt: 1 }}>
+                                            <FormControlLabel
+                                                label={result.name}
+                                                control={
+                                                    <Checkbox
+                                                        checked={result.checkbox}
+                                                        onChange={() => handleChangeCheckbox(result.sku)}
+                                                    />
+                                                }
+                                            />
+                                            <TextField
+                                                type="number"
+                                                value={result.returnQuantity}
+                                                onChange={(e) => { handleChangeQuantity(result.sku, e.target.value, result.quantity); }}
+                                                variant="outlined"
+                                            />
+                                        </Box>
                                     </React.Fragment>
-
                                 )
                             })
                         }
                     </>
-                    : <TextField value="Please enter a valid ID"></TextField>
+                    : <Typography sx={{ mt: 2 }}>Please enter a valid ID</Typography>
             }
         </>
     );

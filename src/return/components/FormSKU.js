@@ -10,18 +10,9 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
 import FormItems from './FormItems';
-// import { useScrollTrigger } from '@mui/material';
-import { ITEMS } from '../../schema/dummy';
 
 const FormSKU = (props) => {
     const [inputId, setInputId] = useState();
-
-    // const handleClick = (input) => {
-    //     // alert(input);
-    //     if(ITEMS.find((item) => item.deliveryId === input)) {
-    //         setInputId(input);
-    //     };
-    // }
 
     return (
         <>
@@ -42,7 +33,7 @@ const FormSKU = (props) => {
 
             {props.formik.values.idType === 'DeliveryId' && (
                 <>
-                    <FormControl sx={{ mt: 2 }}>
+                    <FormControl sx={{ mt: 2, display:'flex', flexDirection:'row' }}>
                         <FormLabel id="demo-radio-buttons-group-label"></FormLabel>
                         <TextField required
                             label="DeliveryId"
@@ -56,8 +47,8 @@ const FormSKU = (props) => {
                             helperText={props.formik.touched.deliveryId && props.formik.errors.deliveryId}
                         />
 
-                        <Button color="inherit" onClick={() => setInputId(props.formik.values.deliveryId)} sx={{ mr: 1 }}>
-                            Show Items
+                        <Button onClick={() => setInputId(props.formik.values.deliveryId)} sx={{ mr: 1 }}>
+                            Search
                         </Button>
                     </FormControl>
                     <FormItems id={inputId} />
@@ -79,7 +70,7 @@ const FormSKU = (props) => {
                             helperText={props.formik.touched.deliveryOrderId && props.formik.errors.deliveryOrderId}
                         />
                     </FormControl>
-                    {/* <FormItems id={props.formik.values.deliveryOrderId} /> */}
+                    <FormItems id={inputId} />
                 </>
             )}
         </>
