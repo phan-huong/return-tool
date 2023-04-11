@@ -1,12 +1,11 @@
 import React from 'react';
 
-
-import ReturnStepper from '../components/Stepper';
+import StepperForm from '../components/Stepper';
 
 const Return = () => {
-    return <ReturnStepper>
+    return <StepperForm>
         
-    </ReturnStepper>
+    </StepperForm>
 }
 
 export default Return;

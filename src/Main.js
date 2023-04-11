@@ -9,8 +9,6 @@ import Home from './home/Home';
 import Return from './return/pages/Return';
 
 const Main = () => {
-    // const [darkMode, setDarkmode] = useState(false);
-
     return (
         <PageWrapper>
             <Header />
@@ -35,16 +33,15 @@ const PageWrapper = styled.div`
     display: flex;
     -webkit-flex-flow: column;
     flex-flow: column;
-    justify-content: space-between;
     background-color: ${props => props.$night ? "#333333" : "white"};
     color: ${props => props.$night ? "white" : "#333333"};
 `;
 
 const PageMain = styled.main`
-    flex: 2 1;
     overflow: auto;
-    margin: 0.5rem 0;
-    padding: 0 5%;
+    margin: 0 0 2rem 0;
+    padding: 2rem 5% 0 5%;
+    height: 100%;
 `;
 
 export default Main;
